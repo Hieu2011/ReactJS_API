@@ -20,7 +20,7 @@ export const actionDeleteProductRequest = (id,name) =>{
         return callAPI(`products/${id}`, 'DELETE',null).then(res =>{
            
             if (res.status === 200) { //ok
-                dispatch(actionDeleteProduct(id,name));
+                dispatch(actionDeleteProduct(res.data));
                 alert('Xóa thành công sản phẩm ' + name);
             }
         });
